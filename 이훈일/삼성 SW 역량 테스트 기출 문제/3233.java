@@ -9,9 +9,9 @@ class Solution {
 		
 		for(int test_case = 1; test_case <= T; test_case++) {
 			int A = sc.nextInt();
-            int B = sc.nextInt();
+            		int B = sc.nextInt();
             
-            System.out.printf("#%d %.0f%n", test_case, Math.pow(A / B, 2));
+            		System.out.printf("#%d %.0f%n", test_case, Math.pow(A / B, 2));
 		}
 	}
 }
