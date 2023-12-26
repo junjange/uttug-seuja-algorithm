@@ -5,7 +5,7 @@ import sys
 
 n = int(sys.stdin.readline())
 m = int(sys.stdin.readline())
-graph = [[100001] * (n + 1) for _ in range(n + 1)]
+graph = [[1e9] * (n + 1) for _ in range(n + 1)]
 
 for _ in range(m):
     a, b, c = map(int, sys.stdin.readline().split())
@@ -19,10 +19,10 @@ for i in range(1, n + 1):
             else:
                 graph[j][k] = min(graph[j][k], graph[j][i] + graph[i][k])
 
-for row in graph[1:]:
-    for col in row[1:]:
-        if col == 100001:
+for a in range(1, n + 1):
+    for b in range(1, n + 1):
+        if graph[a][b] == 1e9:
             print(0, end=" ")
         else:
-            print(col, end=" ")
+            print(graph[a][b], end=" ")
     print()
