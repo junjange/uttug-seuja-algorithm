@@ -1,30 +1,32 @@
 class Solution {
     public int solution(int n) {
         
-        int answer = 0;
-        int count = 0; 
+        int sum = 0;
+         int answer = 0;
         
-        for(int i=1; i<=n;i++){
+        for(int i=1; i<= n; i++){
             
-            count = 0;
+            sum = 0;
             
-            for(int j = i; j<=n; j++){
+            for(int j=i; j<=n; j++){
                 
-                count+=j;
+                sum+=j;
                 
-                if(count==n){
+                if(sum == n){
                     answer++;
                     break;
                 }
-                else if(count>n){
+                
+                if(sum> n){
                     break;
                 }
                 
-                
             }
+            
             
         }
         
+       
         return answer;
     }
 }
