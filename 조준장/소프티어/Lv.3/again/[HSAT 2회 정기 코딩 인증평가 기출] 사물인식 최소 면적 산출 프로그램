@@ -1,0 +1,33 @@
+import sys
+
+def dfs(depth, min_x, min_y, max_x, max_y):
+    global answer
+    
+    if depth > k:
+        x = abs(max_x - min_x)
+        y = abs(max_y - min_y)
+        answer = min(answer, x * y)
+        return
+
+    for g in graph[depth]:
+        min_nx = min(min_x, g[0])
+        min_ny = min(min_y, g[1])
+        max_nx = max(max_x, g[0])
+        max_ny = max(max_y, g[1])
+
+        nx = max_nx - min_nx
+        ny = max_ny - min_ny
+
+        if answer > nx * ny:
+            dfs(depth + 1, min_nx, min_ny, max_nx, max_ny)
+
+n, k = map(int, sys.stdin.readline().split())
+graph = [[] for _ in range(k + 1)]
+for _ in range(n):
+    x, y, k = map(int, sys.stdin.readline().split())
+    graph[k].append([x, y])
+answer = 1e9
+
+for x, y in graph[1]:
+    dfs(2, x, y, x, y)
+print(answer)
