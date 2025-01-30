@@ -1,4 +1,4 @@
-class `11049` {
+class `16724` {
     data class Node(val x: Int, val y: Int)
 
     lateinit var graph: List<List<Char>>
