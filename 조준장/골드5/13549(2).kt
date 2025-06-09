@@ -15,7 +15,7 @@ class `13549` {
         if (n < k) {
             sb.append(bfs(n, k))
         } else {
-            sb.append(k - n)
+            sb.append(n - k)
         }
 
         bw.write(sb.toString())
@@ -47,7 +47,7 @@ class `13549` {
                 visited[num + 1] = time + 1
                 pq.add(Node(num + 1, time + 1))
             }
-            if (num - 1 in 0..100000 && time + 1 < visited[num - 1]) {
+            if (num - 1 in 0..100000 && time - 1 < visited[num - 1]) {
                 visited[num - 1] = time + 1
                 pq.add(Node(num - 1, time + 1))
             }
